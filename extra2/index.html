@@ -27,33 +27,38 @@
             list-style: none;
         }
 
-        /* Header Styles */
         header {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
 
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0077b6;
-        }
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #0077b6;
+    }
 
-        .logo span {
-            color: #023e8a;
-        }
+    .logo img {
+        margin-right: 10px; /* Space between image and text */
+    }
+
+    .logo span {
+        color: #023e8a;
+    }
 
         nav ul {
             display: flex;
@@ -91,7 +96,7 @@
         .hero {
             padding-top: 100px;
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/hero.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg') no-repeat center center/cover;
             color: white;
             display: flex;
             align-items: center;
@@ -225,6 +230,14 @@
             margin: 0 auto;
         }
 
+        .why-choose-p {
+            font-size: 18px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #0077B6;
+        }
+
         .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -340,7 +353,7 @@
 
         /* Call to Action Section */
         .cta {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1572331165267-854da2b10ccc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero2.jpg') no-repeat center center/cover;
             color: white;
             padding: 100px 50px;
             text-align: center;
@@ -639,13 +652,13 @@
     <!-- Header Section -->
     <header>
         <div class="header-container">
-            <div class="logo">Arabian <span>Pools</span></div>
+            <div class="logo"><img src="images/logo.jpg" height="100" width="100"><span>Arabian <span>Pools</span></span></div>
             <nav id="navbar">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <!--<li><a href="#testimonials">Testimonials</a></li>-->
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -676,7 +689,7 @@
         </div>
         <div class="services-grid">
             <div class="service-card">
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="service-image" style="background-image: url('images/maintenance2.jpg');"></div>
                 <div class="service-content">
                     <h3>Weekly Pool Maintenance</h3>
                     <p>Our comprehensive weekly maintenance program ensures your pool stays clean, balanced, and ready to enjoy.</p>
@@ -684,18 +697,26 @@
                 </div>
             </div>
             <div class="service-card">
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="service-image" style="background-image: url('images/repairs.jpg');"></div>
                 <div class="service-content">
-                    <h3>Pool Repairs</h3>
-                    <p>From pump repairs to filter replacements, our technicians can fix any pool issue quickly and efficiently.</p>
+                    <h3>Pool Repairs and Renovations</h3>
+                    <p>From pump repairs and filter replacements to resurfacing, tile upgrades, and deck repairs, our expert technicians efficiently fix any pool issue and transform your pool into a stunning oasis.</p>
                     <a href="#contact" class="primary-button">Learn More</a>
                 </div>
             </div>
             <div class="service-card">
-                <div class="service-image" style="background-image: url('https://images.unsplash.com/photo-1572331165267-854da2b10ccc?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80');"></div>
+                <div class="service-image" style="background-image: url('images/transform.jpg');"></div>
                 <div class="service-content">
-                    <h3>Pool Renovations</h3>
-                    <p>Transform your pool with our renovation services including resurfacing, tile replacement, and deck repairs.</p>
+                    <h3>Transform Your Pool Experience with Premium Pool Parts & Supplies!</h3>
+                    <p>Dive into excellence with our comprehensive range of high-quality swimming pool parts and accessories!</p>
+                    <a href="#contact" class="primary-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('images/tiles.jpg');"></div>
+                <div class="service-content">
+                    <h3>Supply and fix of various swimming pool tiles</h3>
+                    <p>We provide and install high-quality pool tiles (ceramic, glass, mosaic, or stone) for stunning, durable surfaces. Perfect for new builds or renovations, we ensure precise installation and waterproofing.</p>
                     <a href="#contact" class="primary-button">Learn More</a>
                 </div>
             </div>
@@ -705,9 +726,18 @@
     <!-- Why Choose Us Section -->
     <section class="why-choose-us" id="about">
         <div class="why-choose-container">
-            <div class="section-title">
+            <div class="why-choose-p">
                 <h2>Why Choose Arabian Pools</h2>
-                <p>With years of experience and a team of certified professionals, we provide the highest quality pool services in the region.</p>
+                <p>Arabian Pools is a leading swimming pool construction, maintenance, and renovation company dedicated to creating luxurious, functional, and durable pools tailored to your lifestyle. With years of expertise, we specialize in designing, building, and maintaining stunning pools that transform outdoor spaces into personal retreats.<br>
+                    <b>Our Services</b><br>
+                        Maintenance & Repairs: Expert care for pumps, filters, and all pool systems to keep your pool pristine.
+
+                        Renovations: Resurfacing, tile replacement, and deck repairs to revitalize your pool.
+
+                        Tile Supply & Installation: High-quality ceramic, glass, mosaic, and stone tiles for a stunning finish.<br>
+
+                        <b>Our Vision</b><br>
+                        To be the trusted partner for all your pool needs, delivering exceptional craftsmanship and unparalleled customer satisfaction.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
@@ -808,19 +838,22 @@
                 <div class="contact-details">
                     <div>
                         <span class="contact-icon">📍</span>
-                        <p>123 Pool Avenue, Dubai, UAE</p>
+                        <a href="https://maps.app.goo.gl/aWq2CXsXx2S7ix1M8" target="_blank">Al Rufaa Tower, Zone 17, Building 54, Floor 04 office # 07 Doha-Qatar</a>
                     </div>
                     <div>
                         <span class="contact-icon">📱</span>
-                        <p>+971 50 123 4567</p>
+                        <p>+974 3114 8008</p>
                     </div>
                     <div>
                         <span class="contact-icon">✉️</span>
-                        <p>info@arabianpools.com</p>
+                        <a href="mailto: sales@arabianpools.com">sales@arabianpools.com</a>
                     </div>
                     <div>
                         <span class="contact-icon">⏰</span>
-                        <p>Monday - Friday: 8:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                        <p>Saturday - Thursday: 8:00 AM - 5:00 PM</p>
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.562271004597!2d51.541960075954556!3d25.285306428125153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c5f272250c69%3A0xfadd95173b1aac8b!2sAl%20Rufaa%20Tower!5e0!3m2!1sen!2sde!4v1740777801611!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -853,11 +886,9 @@
         <div class="footer-container">
             <div class="footer-about">
                 <div class="footer-logo">Arabian Pools</div>
-                <p>Providing professional pool maintenance services in the UAE. Our team of experts is dedicated to keeping your pool clean, safe, and beautiful year-round.</p>
+                <p>Providing professional pool maintenance services in Doha. Our team of experts is dedicated to keeping your pool clean, safe, and beautiful year-round.</p>
                 <div class="social-icons">
                     <a href="#" class="social-icon">f</a>
-                    <a href="#" class="social-icon">t</a>
-                    <a href="#" class="social-icon">in</a>
                     <a href="#" class="social-icon">ig</a>
                 </div>
             </div>
@@ -867,15 +898,15 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
+                    <!--<li><a href="#testimonials">Testimonials</a></li>-->
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
                 <h4>Contact Info</h4>
-                <p><span class="footer-contact-icon">📍</span> 123 Pool Avenue, Dubai, UAE</p>
-                <p><span class="footer-contact-icon">📱</span> +971 50 123 4567</p>
-                <p><span class="footer-contact-icon">✉️</span> info@arabianpools.com</p>
+                <a href="https://maps.app.goo.gl/aWq2CXsXx2S7ix1M8" target="_blank"><p><span class="footer-contact-icon">📍</span> Al Rufaa Tower, Zone 17, Building 54, Floor 04 office # 07 Doha-Qatar</p></a>
+                <p><span class="footer-contact-icon">📱</span> +974 3114 8008</p>
+                <a href="mailto: sales@arabianpools.com"><p><span class="footer-contact-icon">✉️</span> sales@arabianpools.com</p></a>
             </div>
             <div class="footer-newsletter">
                 <h4>Newsletter</h4>

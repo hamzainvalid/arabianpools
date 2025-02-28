@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading...</title>
+  <style>
+    /* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #0077b6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.landing-screen h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.landing-screen p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* Loader Animation */
+.loader {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #ff6b35;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+  </style>
+</head>
+<body>
+  <div class="landing-screen">
+    <img src="images/logo2.jpg" height="300" width="300">
+    <h1>Welcome to Arabian Pools</h1>
+    <p>Your dream pool is just a click away...</p>
+    <div class="loader"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+<script>
+  // Set the time limit in milliseconds (e.g., 5000ms = 5 seconds)
+const timeLimit = 2000;
+
+// Redirect to the main page after the time limit
+setTimeout(() => {
+  window.location.href = 'index.html'; // Change this to your main page URL
+}, timeLimit);
+</script>
+</html>
