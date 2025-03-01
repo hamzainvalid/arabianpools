@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arabian Pools - Professional Pool Maintenance Services</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        header {
+        background-color: #fff;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        font-size: 24px;
+        font-weight: bold;
+        color: #0077b6;
+    }
+
+    .logo img {
+        margin-right: 10px; /* Space between image and text */
+    }
+
+    .logo span {
+        color: #023e8a;
+    }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #0077b6;
+        }
+
+        .contact-button {
+            background-color: #0077b6;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #023e8a;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 100px;
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/hero.jpg') no-repeat center center/cover;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .primary-button {
+            background-color: #0077b6;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .primary-button:hover {
+            background-color: #023e8a;
+        }
+
+        .secondary-button {
+            background-color: transparent;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 500;
+            border: 2px solid white;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+
+        .secondary-button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #0077b6;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #666;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-image {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .service-content {
+            padding: 25px;
+        }
+
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #0077b6;
+        }
+
+        .service-content p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose-us {
+            background-color: #f8f9fa;
+            padding: 80px 50px;
+        }
+
+        .why-choose-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .why-choose-p {
+            font-size: 18px;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #0077B6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: #0077b6;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #0077b6;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-slider {
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 20px;
+        }
+
+        .testimonial-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .client-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .client-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin-right: 15px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .client-details h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .client-details p {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .slider-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .slider-btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .slider-btn.active {
+            background-color: #0077b6;
+        }
+
+        /* Call to Action Section */
+        .cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero2.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* Contact Form Section */
+        .contact {
+            padding: 80px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-top: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #0077b6;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-details div {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .contact-icon {
+            color: #0077b6;
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .contact-form h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #0077b6;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: #0077b6;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #023e8a;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #023e8a;
+            color: white;
+            padding: 50px 50px 20px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s;
+        }
+
+        .social-icon:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer-links h4,
+        .footer-contact h4,
+        .footer-newsletter h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-links h4:after,
+        .footer-contact h4:after,
+        .footer-newsletter h4:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: #0077b6;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            transition: color 0.3s;
+        }
+
+        .footer-links ul li a:hover {
+            color: #0077b6;
+        }
+
+        .footer-contact p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .footer-contact-icon {
+            margin-right: 10px;
+        }
+
+        .footer-newsletter p {
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form {
+            display: flex;
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .newsletter-btn {
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .newsletter-btn:hover {
+            background-color: #0096c7;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 15px 20px;
+            }
+
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background-color: white;
+                width: 100%;
+                height: calc(100vh - 70px);
+                transition: left 0.3s;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            nav.active {
+                left: 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+            }
+
+            nav ul li {
+                margin-bottom: 15px;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hero-content,
+            .services,
+            .why-choose-container,
+            .testimonials,
+            .contact {
+                padding: 0 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hero-buttons a {
+                width: 100%;
+                text-align: center;
+            }
+
+            .cta {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-container">
+            <div class="logo"><img src="images/logo.jpg" height="100" width="100"><span>Arabian <span>Pools</span></span></div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <!--<li><a href="#testimonials">Testimonials</a></li>-->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <a href="#contact" class="contact-button">Get a Quote</a>
+            <div class="hamburger" id="hamburger">
+                <span>&#9776;</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Professional Pool Maintenance Services</h1>
+            <p>Arabian Pools provides expert pool maintenance, cleaning, and repair services to keep your pool crystal clear and safe for your family.</p>
+            <div class="hero-buttons">
+                <a href="#services" class="primary-button">Our Services</a>
+                <a href="#contact" class="secondary-button">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Pool Services</h2>
+            <p>We offer a wide range of pool maintenance and repair services to keep your pool in perfect condition year-round.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('images/maintenance2.jpg');"></div>
+                <div class="service-content">
+                    <h3>Weekly Pool Maintenance</h3>
+                    <p>Our comprehensive weekly maintenance program ensures your pool stays clean, balanced, and ready to enjoy.</p>
+                    <a href="#contact" class="primary-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('images/repairs.jpg');"></div>
+                <div class="service-content">
+                    <h3>Pool Repairs and Renovations</h3>
+                    <p>From pump repairs and filter replacements to resurfacing, tile upgrades, and deck repairs, our expert technicians efficiently fix any pool issue and transform your pool into a stunning oasis.</p>
+                    <a href="#contact" class="primary-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('images/transform.jpg');"></div>
+                <div class="service-content">
+                    <h3>Transform Your Pool Experience with Premium Pool Parts & Supplies!</h3>
+                    <p>Dive into excellence with our comprehensive range of high-quality swimming pool parts and accessories!</p>
+                    <a href="#contact" class="primary-button">Learn More</a>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-image" style="background-image: url('images/tiles.jpg');"></div>
+                <div class="service-content">
+                    <h3>Supply and fix of various swimming pool tiles</h3>
+                    <p>We provide and install high-quality pool tiles (ceramic, glass, mosaic, or stone) for stunning, durable surfaces. Perfect for new builds or renovations, we ensure precise installation and waterproofing.</p>
+                    <a href="#contact" class="primary-button">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose-us" id="about">
+        <div class="why-choose-container">
+            <div class="why-choose-p">
+                <h2>Why Choose Arabian Pools</h2>
+                <p>Arabian Pools is a leading swimming pool construction, maintenance, and renovation company dedicated to creating luxurious, functional, and durable pools tailored to your lifestyle. With years of expertise, we specialize in designing, building, and maintaining stunning pools that transform outdoor spaces into personal retreats.<br>
+                    <b>Our Services</b><br>
+                        Maintenance & Repairs: Expert care for pumps, filters, and all pool systems to keep your pool pristine.
+
+                        Renovations: Resurfacing, tile replacement, and deck repairs to revitalize your pool.
+
+                        Tile Supply & Installation: High-quality ceramic, glass, mosaic, and stone tiles for a stunning finish.<br>
+
+                        <b>Our Vision</b><br>
+                        To be the trusted partner for all your pool needs, delivering exceptional craftsmanship and unparalleled customer satisfaction.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>Experienced Technicians</h3>
+                    <p>Our team consists of certified and experienced pool technicians who know how to keep your pool in perfect condition.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>Quality Products</h3>
+                    <p>We use only the highest quality chemicals and equipment to ensure your pool stays clean and safe.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>Reliable Service</h3>
+                    <p>Count on us to show up on time, every time, and provide consistent, reliable pool maintenance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>Competitive Pricing</h3>
+                    <p>We offer transparent, competitive pricing with no hidden fees or unexpected charges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section
+    <section class="testimonials" id="testimonials">
+        <div class="section-title">
+            <h2>What Our Clients Say</h2>
+            <p>Don't just take our word for it. Here's what our satisfied customers have to say about our services.</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial-slides" id="testimonial-slides">
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <p>"Arabian Pools has been maintaining our pool for over 2 years now, and we couldn't be happier with their service. Our pool is always crystal clear and perfectly balanced."</p>
+                        <div class="client-info">
+                            <div class="client-image" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                            <div class="client-details">
+                                <h4>Ahmed S.</h4>
+                                <p>Dubai, UAE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <p>"After trying several pool companies, we finally found Arabian Pools. Their attention to detail and knowledge about pool chemistry is impressive. Highly recommended!"</p>
+                        <div class="client-info">
+                            <div class="client-image" style="background-image: url('https://randomuser.me/api/portraits/women/65.jpg');"></div>
+                            <div class="client-details">
+                                <h4>Sarah M.</h4>
+                                <p>Abu Dhabi, UAE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-card">
+                        <p>"The team at Arabian Pools renovated our old pool and the results are amazing! They completed the project on time and within budget. We're enjoying our pool more than ever."</p>
+                        <div class="client-info">
+                            <div class="client-image" style="background-image: url('https://randomuser.me/api/portraits/men/41.jpg');"></div>
+                            <div class="client-details">
+                                <h4>Khalid A.</h4>
+                                <p>Sharjah, UAE</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-buttons" id="slider-buttons">
+                <div class="slider-btn active" data-index="0"></div>
+                <div class="slider-btn" data-index="1"></div>
+                <div class="slider-btn" data-index="2"></div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Call to Action Section -->
+    <section class="cta">
+        <div class="cta-container">
+            <h2>Ready for a Perfectly Maintained Pool?</h2>
+            <p>Contact us today to schedule a free consultation and get a customized maintenance plan for your pool.</p>
+            <a href="#contact" class="primary-button">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Have questions or ready to get started? Reach out to us today and our team will be happy to assist you.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <div class="contact-details">
+                    <div>
+                        <span class="contact-icon">📍</span>
+                        <a href="https://maps.app.goo.gl/aWq2CXsXx2S7ix1M8" target="_blank">Al Rufaa Tower, Zone 17, Building 54, Floor 04 office # 07 Doha-Qatar</a>
+                    </div>
+                    <div>
+                        <span class="contact-icon">📱</span>
+                        <p>+974 3114 8008</p>
+                    </div>
+                    <div>
+                        <span class="contact-icon">✉️</span>
+                        <a href="mailto: sales@arabianpools.com">sales@arabianpools.com</a>
+                    </div>
+                    <div>
+                        <span class="contact-icon">⏰</span>
+                        <p>Saturday - Thursday: 8:00 AM - 5:00 PM</p>
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.562271004597!2d51.541960075954556!3d25.285306428125153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45c5f272250c69%3A0xfadd95173b1aac8b!2sAl%20Rufaa%20Tower!5e0!3m2!1sen!2sde!4v1740777801611!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+  <h3>Send Us a Message</h3>
+  <form id="contactForm" action="mailto:sales@arabianpools.com" method="post" enctype="text/plain">
+    <div class="form-group">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" required>
+    </div>
+    <div class="form-group">
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+    </div>
+    <button type="submit" class="submit-btn">Send Message</button>
+  </form>
+</div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">Arabian Pools</div>
+                <p>Providing professional pool maintenance services in Doha. Our team of experts is dedicated to keeping your pool clean, safe, and beautiful year-round.</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">ig</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <!--<li><a href="#testimonials">Testimonials</a></li>-->
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Info</h4>
+                <a href="https://maps.app.goo.gl/aWq2CXsXx2S7ix1M8" target="_blank"><p><span class="footer-contact-icon">📍</span> Al Rufaa Tower, Zone 17, Building 54, Floor 04 office # 07 Doha-Qatar</p></a>
+                <p><span class="footer-contact-icon">📱</span> +974 3114 8008</p>
+                <a href="mailto: sales@arabianpools.com"><p><span class="footer-contact-icon">✉️</span> sales@arabianpools.com</p></a>
+            </div>
+            <div class="footer-newsletter">
+                <h4>Newsletter</h4>
+                <p>Subscribe to our newsletter for pool maintenance tips and special offers.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Your Email" class="newsletter-input">
+                    <button type="submit" class="newsletter-btn">Subscribe</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Arabian Pools. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navbar = document.getElementById('navbar');
+
+        hamburger.addEventListener('click', () => {
+            navbar.classList.toggle('active');
+        });
+
+        // Testimonial Slider
+        const testimonialSlides = document.getElementById('testimonial-slides');
+        const sliderButtons = document.querySelectorAll('.slider-btn');
+
+        sliderButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const index = button.getAttribute('data-index');
+
+                // Update slider position
+                testimonialSlides.style.transform = `translateX(-${index * 100}%)`;
+
+                // Update active button
+                sliderButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+            });
+        });
+
+        // Auto slide testimonials
+        let currentSlide = 0;
+        const totalSlides = sliderButtons.length;
+
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % totalSlides;
+
+            // Update slider position
+            testimonialSlides.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+            // Update active button
+            sliderButtons.forEach(btn => btn.classList.remove('active'));
+            sliderButtons[currentSlide].classList.add('active');
+        }, 5000);
